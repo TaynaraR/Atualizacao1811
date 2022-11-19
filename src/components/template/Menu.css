@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+nav.menu {  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px;
+    background-color:rgb(1, 33, 15);
+    
+    
+    
+}
+
+.menu a{
+    display: flex;
+    gap: 32px; 
+    text-decoration: none;
+    color: rgba(215, 255, 234, 0.877);
+    padding: 10px;
+    font-size: 15px;
+
+
+}
+
+.menu a:hover {
+    color: #000000;
+}
