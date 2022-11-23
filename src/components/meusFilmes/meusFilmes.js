@@ -6,7 +6,7 @@ import Card from "../ListaFilme/Cards.js";
 import CrudFilme from "../CrudFilme/CrudFilme.js";
 import AuthService from "../../services/Auth.service.js";
 
-const title = "Consulta Meus Filmes";
+const title = "Consultar meus Filmes";
 
 const urlAPI = "http://localhost:5092/api/Filme";
 
