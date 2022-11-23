@@ -7,6 +7,8 @@ import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
 import CrudLivro from './components/CrudLivro/CrudLivro'
 import ListaLivro from './components/ListaLivro/ListaLivro';
+import telaCliente from './components/telaCliente/telaCliente';
+import meusLivros from './components/meusLivros/meusLivros';
 export default function Rotas() {
     const [currentUser, setCurrentUser] = useState(undefined);
     useEffect(() => {
@@ -19,12 +21,6 @@ export default function Rotas() {
     }, []);
     return (
         <Routes>
-            <Route exact path='/'
-                element={
-                    <Main title="Bem Vindo a biblioteca!">
-                        <ListaLivro></ListaLivro>
-                    </Main>}
-            />
            
             {currentUser ? (
                 <Route exact path='/cursos'
@@ -51,7 +47,9 @@ export default function Rotas() {
                 }
             />
             
-            <Route path='/login' element={<Login />} />
+            <Route path='/' element={<Login />} />
+            <Route path='/biblioteca' element={<T />} />
+            <Route path='/meusLivros' element={<Login />} />
             <Route path='/logout' element={<Logout />} />
             <Route path="*" to='/' />
             <Route path="/livro" element={<CrudLivro/>}/>

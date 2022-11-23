@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import "./Login.css";
 import AuthService from "../../services/Auth.service";
@@ -7,6 +7,7 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
+
     async function handleSubmit(evento) {
         console.log(username,password)
         evento.preventDefault();
@@ -16,7 +17,12 @@ export default function Login() {
         } else {
             AuthService.login(username, password).then(
                 () => {
-                    navigate("/livro");
+                    if(AuthService.getCurrentUser().role != "admin") {
+
+                    }
+                    else {
+                        
+                    }
                     window.location.reload(); // atualiza o localStorage
                 },
                 (error) => {
