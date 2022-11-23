@@ -1,23 +1,23 @@
 import React, {useState,useEffect } from "react";
 import Menu from '../template/Menu.js'
-import "./CrudLivro.css"
+import "./CrudFilme.css"
 import Main from "../template/Main";
 import axios from "axios";
-import Card from "../CrudLivro/Cards.js";
+import Card from "./Cards.js";
 
-const title = "Consulta e Cadastro de Livro";
+const title = "Consulta e Cadastro de Filmes";
 
-const urlAPI = "http://localhost:5092/api/Livro";
+const urlAPI = "http://localhost:5092/api/Filme";
 
-export default function CrudLivro() {
+export default function CrudFilme() {
  
   const [lista, setLista] = useState ([])
   
-  const [Livro, setLivro] = useState([{
+  const [Filme, setFilme] = useState([{
     id: 0,
-    codLivro: 0,
-    nomeLivro: "",
-    dataLivro: "",
+    codFilme: 0,
+    nomeFilme: "",
+    dataFilme: "",
     imagem:""
     
   }])
@@ -26,7 +26,7 @@ const [Atualizar, setAtualizar] = useState(false)
 
   useEffect(() =>{
     axios(urlAPI).then((resp) => {
-           setLivro(resp.data);
+           setFilme(resp.data);
            setLista(resp.data);
       });
   },[lista]) 
@@ -36,30 +36,30 @@ const [Atualizar, setAtualizar] = useState(false)
    };
   
     const salvar = () => {
-    const codLivro = document.getElementById("codLivro").value;
-    const nomeLivro = document.getElementById("nomeLivro").value;
-    const dataLivro = document.getElementById("dataLivro").value;
+    const codFilme= document.getElementById("codFilme").value;
+    const nomeFilme= document.getElementById("nomeFilme").value;
+    const dataFilme= document.getElementById("dataFilme").value;
     const imagem = document.getElementById("imagem").value;
     const json = {
       id: 0,
-      codLivro: codLivro,
-      nomeLivro: nomeLivro,
-      dataLivro: dataLivro,
+      codFilme: codFilme,
+      nomeFilme: nomeFilme,
+      dataFilme: dataFilme,
       imagem: imagem
     }
     const metodo = "post";
     axios[metodo](urlAPI, json).then((resp) => {
-    setLivro(Livro)
+    setFilme(Filme)
       
     });
   }
 
   const atualizar = (id) => {
-    const Livros = {id: document.getElementById("idLivro").value, codLivro: document.getElementById("codLivro").value, nomeLivro: document.getElementById("nomeLivro").value, dataLivro: document.getElementById("dataLivro").value, imagem: document.getElementById("imagem").value}
+    const Filmes = {id: document.getElementById("idFilme").value, codFilme: document.getElementById("codFilme").value, nomeFilme: document.getElementById("nomeFilme").value, dataFilme: document.getElementById("dataFilme").value, imagem: document.getElementById("imagem").value}
     const metodo = "put";
-    axios[metodo](urlAPI + "/" + Livros.id, Livros).then((resp) => {
+    axios[metodo](urlAPI + "/" + Filmes.id, Filmes).then((resp) => {
       const lista = getListaAtualizada(resp.data);
-      setLivro(resp.data);
+      setFilme(resp.data);
       setLista(lista);
     });
     setAtualizar(false);
@@ -69,9 +69,9 @@ const [Atualizar, setAtualizar] = useState(false)
 
 
 
-  const getListaAtualizada = (Livro)=> {
-      const lista = lista.filter((a) => a.id !== Livro.id);
-      lista.unshift(Livro);
+  const getListaAtualizada = (Filme)=> {
+      const lista = lista.filter((a) => a.id !== Filme.id);
+      lista.unshift(Filme);
       axios(urlAPI).then((resp) => {
         setLista(resp.data);
     });
@@ -79,9 +79,9 @@ const [Atualizar, setAtualizar] = useState(false)
   }
 
   const atualizaCampo = (event) => {
-    const Livros = Livro
-    Livros[event.target.nomeLivro] = event.target.value;
-    setLivro(Livros)
+    const Filmes = Filme
+    Filmes[event.target.nomeFilme] = event.target.value;
+    setFilme(Filmes)
   }
 
   const renderForm = () => {
@@ -95,40 +95,40 @@ const [Atualizar, setAtualizar] = useState(false)
 
           disabled = {true}
           type="text"
-          id="idLivro"
-          placeholder="idLivro"
+          id="idFilme"
+          placeholder="idFilme"
           className="form-input"
-          name="codLivro"
-          value={Livro.id}
+          name="codFilme"
+          value={Filme.id}
         />
        </> }
       
-        <label> <p className="textLabel">Código do Livro:</p> </label>
+        <label> <p className="textLabel">Código do Filme:</p> </label>
         <input
           type="text"
-          id="codLivro"
-          placeholder="Código do Livro"
+          id="codFilme"
+          placeholder="Código do Filme"
           className="form-input"
-          name="codLivro"
-          value={Livro.codLivro}
+          name="codFilme"
+          value={Filme.codFilme}
         />
-        <label> <p className="textLabel">Nome do Livro:</p> </label>
+        <label> <p className="textLabel">Nome do Filme:</p> </label>
         <input
           type="text"
-          id="nomeLivro"
-          placeholder="Nome do Livro"
+          id="nomeFilme"
+          placeholder="Nome do Filme"
           className="form-input"
-          name="nomeLivro"
-          value={Livro.nomeLivro}         
+          name="nomeFilme"
+          value={Filme.nomeFilme}         
         />
-        <label> <p className="textLabel">Data da Leitura:</p> </label>
+        <label> <p className="textLabel">Data de Lançamento:</p> </label>
         <input
           type="text"
-          id="dataLivro"
+          id="dataFilme"
           className="form-input"
-          name="dataLivro"
+          name="dataFilme"
           placeholder="Data a Leitura"
-          value={Livro.dataLivro}
+          value={Filme.dataFilme}
         />
          <label> <p className="textLabel">Url da imagem:</p> </label>
         <input
@@ -137,7 +137,7 @@ const [Atualizar, setAtualizar] = useState(false)
           className="form-input"
           name="imagem"
           placeholder="imagem"
-          value={Livro.imagem}
+          value={Filme.imagem}
         />
         {!Atualizar ?
         <button className="butao" onClick={(e) => salvar(e)}>
@@ -154,15 +154,15 @@ const [Atualizar, setAtualizar] = useState(false)
     );
   }
 
-  const carregar = (Livro) => {
+  const carregar = (Filme) => {
     setAtualizar(true)
-    setLivro(Livro)
+    setFilme(Filme)
   }
 
-  const remover = (Livro) => {
-    const url = urlAPI + "/" + Livro.id;
-    if (window.confirm("Confirma remoção de Livro: " + Livro.id)) {
-      axios["delete"](url, Livro).then((resp) => {
+  const remover = (Filme) => {
+    const url = urlAPI + "/" + Filme.id;
+    if (window.confirm("Confirma remoção de Filme: " + Filme.id)) {
+      axios["delete"](url, Filme).then((resp) => {
       });
     }
   }
@@ -170,16 +170,16 @@ const [Atualizar, setAtualizar] = useState(false)
   const renderTable = () => {
     return (
       <div className="divPrincipal">
-            {lista.map((Livro) => (
-              <tr key={Livro.id}>
-                <Card nomeLivro={Livro.nomeLivro} dataLivro={Livro.dataLivro} codLivro={Livro.codLivro} imgem={Livro.imagem}/>
+            {lista.map((Filme) => (
+              <tr key={Filme.id}>
+                <Card nomeFilme={Filme.nomeFilme} dataFilme={Filme.dataFilme} codFilme={Filme.codFilme} imgem={Filme.imagem}/>
                 <td>
                   <button className="butao2"
-                  onClick={() => carregar(Livro)}>Altera</button>
+                  onClick={() => carregar(Filme)}>Altera</button>
                 </td>
                 <td>
                   <button className="butao2"
-                   onClick={() => remover(Livro)}>Remove</button>
+                   onClick={() => remover(Filme)}>Remove</button>
                 </td>
               </tr> 
             ))}

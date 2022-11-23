@@ -14,15 +14,23 @@ img{
     border-radius: 7px;
 }
 
-.codLivro{
+.codFilme{
  padding: 5px;
  font-size: 18px;
  font-family: 'Franklin Gothic Medium';
 }
 
-.nomeLivro{
+.nomeFilme{
     padding: 5px;
     font-size: 18px;
+    font-family: 'Franklin Gothic Medium';
+}
+
+.dataFilme{
+    margin-top: 10px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
     font-family: 'Franklin Gothic Medium';
 }
 

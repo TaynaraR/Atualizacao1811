@@ -5,10 +5,10 @@ import Main from './components/template/Main';
 import AuthService from './services/Auth.service';
 import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
-import CrudLivro from './components/CrudLivro/CrudLivro'
-import ListaLivro from './components/ListaLivro/ListaLivro';
+import ListaLivro from './components/ListaFilme/ListaFilme';
 import telaCliente from './components/telaCliente/telaCliente';
-import meusLivros from './components/meusLivros/meusLivros';
+import meusFilmes from './components/meusFilmes/meusFilmes';
+import CrudFilme from './components/CrudFilme/CrudFilme';
 export default function Rotas() {
     const [currentUser, setCurrentUser] = useState(undefined);
     useEffect(() => {
@@ -48,11 +48,12 @@ export default function Rotas() {
             />
             
             <Route path='/' element={<Login />} />
-            <Route path='/biblioteca' element={<T />} />
-            <Route path='/meusLivros' element={<Login />} />
+            <Route path='/locadora' element={<T />} />
+            <Route path='/meusFilmes' element={<meusFilmes />} />
             <Route path='/logout' element={<Logout />} />
             <Route path="*" to='/' />
-            <Route path="/livro" element={<CrudLivro/>}/>
+            <Route path="/filme" element={<CrudFilme/>}/>
+   
          
         </Routes>
     )

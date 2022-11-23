@@ -22,7 +22,7 @@ export default function Menu(props) {
                 </Link>
             ) : (
                 <Link to="/login">
-                    Login bibliotecario 
+                    Login da locadora
                 </Link>
             )}
         </nav>

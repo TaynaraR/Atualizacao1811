@@ -1,6 +1,6 @@
 import './Card.css';
 
-export default function Cards ({nomeLivro,dataLivro,codLivro,imgem}){
+export default function Cards ({nomeFilme,dataFilme,codFilme,imgem}){
     return(
 
 
@@ -9,16 +9,17 @@ export default function Cards ({nomeLivro,dataLivro,codLivro,imgem}){
                <div className='imge'>
                    <img src={imgem} width={150} height={150}/> 
                 </div>   
+                <div className='codFilme'>
+                   {codFilme}
+                </div>
             
-                <div className='nomeLivro'>
-                    {nomeLivro}
+                <div className='nomeFilme'>
+                    {nomeFilme}
                 </div>
-                <div className='dataLivro'>
-                    {dataLivro}
+                <div className='dataFilme'>
+                    {dataFilme}
                 </div>
-                <div className='codLivro'>
-                   {codLivro}
-                </div>
+
             </div>
       
       

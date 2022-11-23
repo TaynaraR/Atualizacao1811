@@ -1,12 +1,11 @@
 .card{
     background-color: rgb(246, 242, 242);
-    box-shadow: 0px 0px 30px rgba(58, 143, 99, 0.267);
+    box-shadow: 0px 0px 10px #0004;
     padding: 10px;
     margin-right: 40px;
     border-radius: 7px;
     display: inline-block;
     text-align: center;
-    font-size: 100px;
 
 }
 
@@ -14,24 +13,33 @@ img{
     border-radius: 7px;
 }
 
-.codLivro{
+.codFilme{
  padding: 5px;
  font-size: 18px;
  font-family: 'Franklin Gothic Medium';
 }
 
-.nomeLivro{
+.nomeFilme{
     padding: 5px;
     font-size: 18px;
     font-family: 'Franklin Gothic Medium';
 }
 
+.dataFilme{
+    margin-top: 10px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium';
+}
 
 .divPrincipal{
-    background-color: #ffff;
+    background-color: #d7d7d7;
     display: inline-flex;
     justify-content:start;
     width: 100%;
-    box-shadow: 0px 0px 0px;
+    box-shadow: 0px 0px 4px;
 }
+
+
 
