@@ -10,11 +10,11 @@ const title = "Consultar  Filmes";
 
 const urlAPI = "http://localhost:5092/api/Filme";
 
-export default function meusFilmes() {
+export default function MeusFilmes() {
  
-  const [lista, setLista] = useState ([])
+  const [lista, setLista] = useState([])
 
-  const [listaIdFilme, setListaIdFilme] = useState ([])
+  const [listaIdFilme, setListaIdFilme] = useState([])
   
   const [Filme, setFilme] = useState([{
     id: 0,
@@ -61,7 +61,7 @@ const [Atualizar, setAtualizar] = useState(false)
             {lista.map((Filme) => (
               <tr key={Filme.id}>
                 <Card nomeFilme={Filme.nomeFilme} dataFilme={Filme.dataFilme} codFilme={Filme.codFilme} imgem={Filme.imagem}/>
-                <button onClick={e=>alugar(Filme)}>Cancelar aluguel do filme</button>
+                <button>Cancelar aluguel do filme</button>
               </tr> 
             ))}
       </div>

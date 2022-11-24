@@ -10,7 +10,7 @@ const title = "Consulta de Filmes";
 
 const urlAPI = "http://localhost:5092/api/Filme";
 
-export default function telaCliente() {
+export default function TelaCliente() {
  
   const [lista, setLista] = useState ([])
   

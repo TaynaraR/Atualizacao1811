@@ -9,6 +9,7 @@ import ListaLivro from './components/ListaFilme/ListaFilme';
 import telaCliente from './components/telaCliente/telaCliente';
 import meusFilmes from './components/meusFilmes/meusFilmes';
 import CrudFilme from './components/CrudFilme/CrudFilme';
+import TelaCliente from './components/telaCliente/telaCliente';
 export default function Rotas() {
     const [currentUser, setCurrentUser] = useState(undefined);
     useEffect(() => {
@@ -48,7 +49,7 @@ export default function Rotas() {
             />
             
             <Route path='/' element={<Login />} />
-            <Route path='/locadora' element={<T />} />
+            <Route path='/locadora' element={<TelaCliente />} />
             <Route path='/meusFilmes' element={<meusFilmes />} />
             <Route path='/logout' element={<Logout />} />
             <Route path="*" to='/' />

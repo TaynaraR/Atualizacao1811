@@ -16,12 +16,13 @@ export default function Login() {
             setMessage("Preencha o username e a senha para continuar!");
         } else {
             AuthService.login(username, password).then(
-                () => {
-                    if(AuthService.getCurrentUser().role != "admin") {
-
+                (e) => {
+                   
+                    if(AuthService.getCurrentUser().user.role != "admin") {
+                        navigate('/locadora')
                     }
                     else {
-                        
+                        navigate('/filme')
                     }
                     window.location.reload(); // atualiza o localStorage
                 },
