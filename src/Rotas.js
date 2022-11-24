@@ -18,6 +18,7 @@ export default function Rotas() {
             setCurrentUser(user);
 
         }
+        
     }, []);
     return (
         <Routes>

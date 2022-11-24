@@ -52,8 +52,19 @@ const [Atualizar, setAtualizar] = useState(false)
   },[]) 
 
 
-  const deletar = (filme) => {
-   
+  const deletar = (Filme) => {
+    axios.put(urlAPI+`/${Filme.id}`,{
+      id: Filme.id,
+      codFilme: Filme.codFilme,
+      nomeFilme:Filme.nomeFilme,
+      dataFilme: Filme.dataFilme,
+      imagem: Filme.imagem,
+      alugado: false,
+      alugadoPor: null
+
+    }).then((resp) => {
+        alert('Cancelamento de aluguel confirmado')
+ });
   }
   
 
