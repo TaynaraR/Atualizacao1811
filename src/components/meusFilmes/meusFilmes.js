@@ -23,6 +23,7 @@ export default function MeusFilmes() {
     dataFilme: "",
     imagem: "",
     alugado: false,
+    alugadoPor: null,
   }])
 
 
@@ -32,26 +33,28 @@ const [Atualizar, setAtualizar] = useState(false)
 
       axios(urlAPI).then((resp) => {
             setFilme(resp.data);
-            setLista(resp.data);
+            setLista(resp.data)
       });
 
-    const user = AuthService.getCurrentUser();
-
-    axios(urlAPI+`/${user.user.username}`).then((resp) => {
-           // tratar dps 
-           // receber apenas os Filmes atrelados ao nome dele.
-           setListaIdFilme(resp.data);
-      });
-
-      listaIdFilme.forEach(id => {
-        setLista(
-          Filme.filter(e => e.id == id )
-        )
-      });
-
-  },[lista]) 
+    Filme.forEach(element => {
+      console.log(element);
+      if(element.alugadoPor == AuthService.getCurrentUser().user.username){
+        
+        setLista(element)
+      }
+     });
 
 
+
+
+
+
+  },[]) 
+
+
+  const deletar = (filme) => {
+   
+  }
   
 
 
@@ -61,7 +64,7 @@ const [Atualizar, setAtualizar] = useState(false)
             {lista.map((Filme) => (
               <tr key={Filme.id}>
                 <Card nomeFilme={Filme.nomeFilme} dataFilme={Filme.dataFilme} codFilme={Filme.codFilme} imgem={Filme.imagem}/>
-                <button>Cancelar aluguel do filme</button>
+                <button onClick={e=>deletar()}>Cancelar aluguel do filme</button>
               </tr> 
             ))}
       </div>

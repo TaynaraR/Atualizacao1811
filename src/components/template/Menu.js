@@ -25,6 +25,13 @@ export default function Menu(props) {
                     Login da locadora
                 </Link>
             )}
+
+            <Link to="/meusFilmes">
+                Meus Livros
+            </Link>
+            
+
+
         </nav>
     )
 }

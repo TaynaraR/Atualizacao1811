@@ -28,29 +28,26 @@ export default function TelaCliente() {
     axios(urlAPI).then((resp) => {
            setFilme(resp.data);
            setLista(resp.data);
+
+
       });
   },[lista]) 
 
 
   // funcao para alugar o Filme
   const alugar = (Filme) =>{
-    axios.put(urlAPI,{
+    console.log(Filme);
+    axios.put(urlAPI+`/${Filme.id}`,{
       id: Filme.id,
       codFilme: Filme.codFilme,
       nomeFilme:Filme.nomeFilme,
       dataFilme: Filme.dataFilme,
       imagem: Filme.imagem,
       alugado: true,
+      alugadoPor: AuthService.getCurrentUser().user.username
 
     }).then((resp) => {
-      axios.post(urlAPI,{
-        id:0,
-        username:AuthService.getCurrentUser().username,
-        idFilme:Filme.id,
-      }).then((e) => {
         alert('Filme alugado com exito!')
-      });
-     
  });
   }
 

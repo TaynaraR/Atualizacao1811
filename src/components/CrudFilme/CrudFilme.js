@@ -4,6 +4,7 @@ import "./CrudFilme.css"
 import Main from "../template/Main";
 import axios from "axios";
 import Card from "./Cards.js";
+import AuthService from "../../services/Auth.service.js";
 
 const title = "Consulta e Cadastro de Filmes";
 
@@ -47,7 +48,8 @@ const [Atualizar, setAtualizar] = useState(false)
       nomeFilme: nomeFilme,
       dataFilme: dataFilme,
       imagem: imagem,
-      alugado:false
+      alugado:false,
+      alugadoPor: null
     }
     const metodo = "post";
     axios[metodo](urlAPI, json).then((resp) => {
@@ -57,7 +59,7 @@ const [Atualizar, setAtualizar] = useState(false)
   }
 
   const atualizar = (id) => {
-    const Filmes = {id: document.getElementById("idFilme").value, codFilme: document.getElementById("codFilme").value, nomeFilme: document.getElementById("nomeFilme").value, dataFilme: document.getElementById("dataFilme").value, imagem: document.getElementById("imagem").value,alugado:false}
+    const Filmes = {id: document.getElementById("idFilme").value, codFilme: document.getElementById("codFilme").value, nomeFilme: document.getElementById("nomeFilme").value, dataFilme: document.getElementById("dataFilme").value, imagem: document.getElementById("imagem").value,alugado:false,alugadoPor:null}
     const metodo = "put";
     axios[metodo](urlAPI + "/" + Filmes.id, Filmes).then((resp) => {
       const lista = getListaAtualizada(resp.data);
