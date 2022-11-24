@@ -18,7 +18,8 @@ export default function CrudFilme() {
     codFilme: 0,
     nomeFilme: "",
     dataFilme: "",
-    imagem:""
+    imagem:"",
+    alugado:false
     
   }])
 
@@ -45,7 +46,8 @@ const [Atualizar, setAtualizar] = useState(false)
       codFilme: codFilme,
       nomeFilme: nomeFilme,
       dataFilme: dataFilme,
-      imagem: imagem
+      imagem: imagem,
+      alugado:false
     }
     const metodo = "post";
     axios[metodo](urlAPI, json).then((resp) => {
@@ -55,7 +57,7 @@ const [Atualizar, setAtualizar] = useState(false)
   }
 
   const atualizar = (id) => {
-    const Filmes = {id: document.getElementById("idFilme").value, codFilme: document.getElementById("codFilme").value, nomeFilme: document.getElementById("nomeFilme").value, dataFilme: document.getElementById("dataFilme").value, imagem: document.getElementById("imagem").value}
+    const Filmes = {id: document.getElementById("idFilme").value, codFilme: document.getElementById("codFilme").value, nomeFilme: document.getElementById("nomeFilme").value, dataFilme: document.getElementById("dataFilme").value, imagem: document.getElementById("imagem").value,alugado:false}
     const metodo = "put";
     axios[metodo](urlAPI + "/" + Filmes.id, Filmes).then((resp) => {
       const lista = getListaAtualizada(resp.data);

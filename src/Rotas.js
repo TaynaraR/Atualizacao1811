@@ -5,9 +5,8 @@ import Main from './components/template/Main';
 import AuthService from './services/Auth.service';
 import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
-import ListaLivro from './components/ListaFilme/ListaFilme';
-import telaCliente from './components/telaCliente/telaCliente';
-import meusFilmes from './components/meusFilmes/meusFilmes';
+
+import MeusFilmes from './components/meusFilmes/meusFilmes';
 import CrudFilme from './components/CrudFilme/CrudFilme';
 import TelaCliente from './components/telaCliente/telaCliente';
 export default function Rotas() {
@@ -50,7 +49,7 @@ export default function Rotas() {
             
             <Route path='/' element={<Login />} />
             <Route path='/locadora' element={<TelaCliente />} />
-            <Route path='/meusFilmes' element={<meusFilmes />} />
+            <Route path='/meusFilmes' element={<MeusFilmes />} />
             <Route path='/logout' element={<Logout />} />
             <Route path="*" to='/' />
             <Route path="/filme" element={<CrudFilme/>}/>

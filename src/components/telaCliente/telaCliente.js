@@ -23,7 +23,6 @@ export default function TelaCliente() {
     alugado: false,
   }])
 
-const [Atualizar, setAtualizar] = useState(false)
 
   useEffect(() =>{
     axios(urlAPI).then((resp) => {
