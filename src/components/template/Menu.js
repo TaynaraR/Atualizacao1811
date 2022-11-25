@@ -21,13 +21,13 @@ export default function Menu(props) {
                     Logout
                 </Link>
             ) : (
-                <Link to="/login">
+                <Link to="/">
                     Login da locadora
                 </Link>
             )}
 
             <Link to="/meusFilmes">
-                Meus Livros
+                Meus Filmes
             </Link>
             
 

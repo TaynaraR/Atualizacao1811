@@ -9,6 +9,8 @@ import Logout from './components/Logout/Logout';
 import MeusFilmes from './components/meusFilmes/meusFilmes';
 import CrudFilme from './components/CrudFilme/CrudFilme';
 import TelaCliente from './components/telaCliente/telaCliente';
+import CrudCadastro from './components/cadastro/CrudCadastro'
+
 export default function Rotas() {
     const [currentUser, setCurrentUser] = useState(undefined);
     useEffect(() => {
@@ -54,6 +56,7 @@ export default function Rotas() {
             <Route path='/logout' element={<Logout />} />
             <Route path="*" to='/' />
             <Route path="/filme" element={<CrudFilme/>}/>
+            <Route path="/cadastro" element={<CrudCadastro/>}/>
    
          
         </Routes>

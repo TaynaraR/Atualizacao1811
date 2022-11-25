@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import "./Login.css";
 import AuthService from "../../services/Auth.service";
+import { Link } from "react-router-dom";
+
 export default function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -78,6 +80,8 @@ export default function Login() {
                 </div>
                 <button type="submit">Login</button><h4 className="msgErro">{message}</h4>
             </form>
+            
+            <Link to="/cadastro">cadastrar</Link>
         </div>
     );
 }
