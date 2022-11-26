@@ -178,11 +178,11 @@ const [Atualizar, setAtualizar] = useState(false)
               <tr key={Filme.id}>
                 <Card nomeFilme={Filme.nomeFilme} dataFilme={Filme.dataFilme} codFilme={Filme.codFilme} imgem={Filme.imagem}/>
                 <td>
-                  <button className="butao2"
+                  <button className="butom"
                   onClick={() => carregar(Filme)}>Altera</button>
                 </td>
                 <td>
-                  <button className="butao2"
+                  <button className="butom"
                    onClick={() => remover(Filme)}>Remove</button>
                 </td>
               </tr> 

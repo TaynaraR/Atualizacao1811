@@ -78,10 +78,10 @@ export default function Login() {
                         }}
                     />
                 </div>
-                <button type="submit">Login</button><h4 className="msgErro">{message}</h4>
+                <button className="login" type="submit">Login</button><h4 className="msgErro">{message}</h4>
             </form>
             
-            <Link to="/cadastro">cadastrar</Link>
+           <div className = "cadastrar" ><Link to="/cadastro">cadastrar</Link></div> 
         </div>
     );
 }

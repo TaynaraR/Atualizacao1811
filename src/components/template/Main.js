@@ -6,12 +6,13 @@ export default function Main(props) {
 
     return (
 
-        <div className="content">
+        <div className="content"  >
         <Header {...props} />
         <main>
-            <div>
+           <div>
                 {props.children}
-            </div>
+                </div>
+           
         </main>
         </div>
 )

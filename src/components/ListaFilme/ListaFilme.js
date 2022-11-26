@@ -2,6 +2,7 @@ import React, {useState,useEffect } from "react";
 import Menu from '../template/Menu.js'
 import Main from "../template/Main";
 import axios from "axios";
+import "./ListaFilme.css"
 import Card from "./Cards.js";
 import CrudFilme from "../CrudFilme/CrudFilme.js";
 
@@ -106,6 +107,9 @@ const [Atualizar, setAtualizar] = useState(false)
     }
   }
 
+  <div className="inserir-container">
+
+  </div>
   const renderTable = () => {
     return (
       <div className="divPrincipal">

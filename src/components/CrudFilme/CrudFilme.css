@@ -5,6 +5,7 @@
  
 }
 
+
 .select {
     padding: 12px;
     margin-bottom: 50px;
@@ -22,13 +23,12 @@
     
 
 }
-.butao2{
-    padding: 5px;
+.butom{
+    padding: 3px;
     margin-bottom: 40px;
     font-size: 15px;
     font-family: 'Franklin Gothic Medium';
-    margin: 0 5px;
     position:relative;
-    left: 35%;    
+    left: 110%;    
 
 }

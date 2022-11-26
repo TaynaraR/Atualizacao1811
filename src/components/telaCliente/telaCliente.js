@@ -3,6 +3,7 @@ import Menu from '../template/Menu.js'
 import Main from "../template/Main";
 import axios from "axios";
 import Card from "../ListaFilme/Cards.js";
+import "./telaCliente.css";
 import CrudFilme from "../CrudFilme/CrudFilme.js";
 import AuthService from "../../services/Auth.service.js";
 

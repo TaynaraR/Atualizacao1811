@@ -1,5 +1,5 @@
 :root {
-  --bg-menu: #bdbbbb;
+  --bg-menu: #fff6f6;
   --logo-width: 150px;
   --content-header-height: 60px;
   --content-footer-height: 40px;
@@ -20,7 +20,7 @@
                       "content content"
                       "footer footer";
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color: #B3F4CF;
 }
 
 .App-logo {
