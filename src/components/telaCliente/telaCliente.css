@@ -1,8 +1,8 @@
 
 .inserir-container{
-    border-radius: 15px;
-    padding: 30px;
-    color: white;
+    border-radius: 80px;
+    padding: 80px;
+    color: rgb(2, 2, 2);
     margin: auto;
  
 }
@@ -10,4 +10,15 @@
 .select {
     padding: 12px;
     margin-bottom: 50px;
+}
+
+.butom{
+    padding: 3px;
+    margin-bottom: 60px;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium';
+    left: 35%;    
+    margin: 0 auto;
+    
+
 }

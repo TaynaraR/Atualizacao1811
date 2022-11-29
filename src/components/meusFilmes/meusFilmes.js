@@ -3,6 +3,7 @@ import Menu from '../template/Menu.js'
 import Main from "../template/Main";
 import axios from "axios";
 import Card from "../ListaFilme/Cards.js";
+import "./meusFilmes.css"
 import CrudFilme from "../CrudFilme/CrudFilme.js";
 import AuthService from "../../services/Auth.service.js";
 
@@ -75,7 +76,7 @@ export default function MeusFilmes() {
           <>
             {Filme.alugadoPor == AuthService.getCurrentUser().user.username && <tr key={Filme.id}>
               <Card nomeFilme={Filme.nomeFilme} dataFilme={Filme.dataFilme} codFilme={Filme.codFilme} imgem={Filme.imagem} />
-              <button onClick={e => deletar(Filme)}>Cancelar aluguel do filme</button>
+              <button className="butao" onClick={e => deletar(Filme)}>Cancelar aluguel do filme</button>
             </tr>}
           </>
         ))}
@@ -84,9 +85,9 @@ export default function MeusFilmes() {
   }
 
   return (
-    <>
+    <Main>
       {renderTable()}
-    </>
+    </Main>
   );
 
 }

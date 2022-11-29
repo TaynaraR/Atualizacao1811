@@ -125,10 +125,12 @@ const [Atualizar, setAtualizar] = useState(false)
   
     return (
  
-  <>
-        {renderForm()}
-        {renderTable()}
-  </>      
+   <Main >
+
+   {renderForm()}
+   {renderTable()}
+   
+ </Main>    
     );
   
 }

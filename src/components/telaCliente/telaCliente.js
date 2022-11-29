@@ -2,7 +2,7 @@ import React, {useState,useEffect } from "react";
 import Menu from '../template/Menu.js'
 import Main from "../template/Main";
 import axios from "axios";
-import Card from "../ListaFilme/Cards.js";
+import Card from "../telaCliente/Cards.js";
 import "./telaCliente.css";
 import CrudFilme from "../CrudFilme/CrudFilme.js";
 import AuthService from "../../services/Auth.service.js";
@@ -52,7 +52,9 @@ export default function TelaCliente() {
  });
   }
 
+<div className="inserir-container">
 
+</div>
 
   const renderTable = () => {
     return (
@@ -61,7 +63,7 @@ export default function TelaCliente() {
             <>
              {Filme.alugado == false && <tr key={Filme.id}>
                 <Card nomeFilme={Filme .nomeFilme} dataFilme={Filme.dataFilme} codFilme={Filme.codFilme} imgem={Filme.imagem}/>
-                <button onClick={e=>alugar(Filme)}>Alugar</button>
+                <button className="butom" onClick={e=>alugar(Filme)}>Alugar</button>
               </tr>}
             </> 
             ))}
@@ -70,9 +72,11 @@ export default function TelaCliente() {
   }
   
     return ( 
-      <>
-        {renderTable()}
-      </>      
+      <Main >
+       
+      {renderTable()}
+      
+    </Main>   
     );
   
 }
